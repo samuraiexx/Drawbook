@@ -1,0 +1,278 @@
+body {
+    margin: 0px;
+    font-family: roboto;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+/* --------------- HEAD ------------------ */
+/* ----------- COLOR SCHEME ------------- */
+#head, #search div { background-color: rgb(95,207,128);}
+#top-menu > a:hover { background-color: rgba(88,88,88, 0.2); }
+#search, #search input { background-color: rgb(88,88,88); }
+#head, #top-menu > a, #top-menu > a:hover, #search { border-color: rgb(88, 88, 88); }
+#head h1, #top-menu > a { color: rgb(66,66,66); }
+#search div, #top-menu > a:hover, #search a, #head h1:hover, #search input { color: white;}
+/* ----------- COLOR SCHEME ------------- */
+#head {
+    position: fixed;
+    z-index: 500;
+    left: 0px;
+    top: 0px;
+    right: 0;
+    height: 70px;
+    border-bottom: 1px solid;
+}
+#logo {
+    width: 32px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-image: url('../img/logo.png');
+    display: inline-block;
+}
+#head h1{
+    transition-duration: 0.5s;
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 35px;
+    margin: 3px 0px 0px 0px;
+    padding-left: 15px;
+}
+#head-right {
+    font-size: 25px;
+    height: 70px;
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    top: 0px;
+    vertical-align: top;
+}
+#top-menu {
+    display: inline-block;
+    position: relative;
+    height: 70px;
+}
+#small-menu { display: none; }
+#top-menu > a{
+    border-left: 1px solid;
+    padding: 20px 15px 23px 15px;
+    display: inline-block;
+    transition-duration: 0.5s;
+    margin: -3px;
+    text-decoration: none;
+}
+
+#search {
+    margin-left: -6px;
+    border-left: 1px solid;
+    vertical-align:top;
+    display: inline-block;
+    width: 250px;
+    height: 70px;
+    position: relative;
+}
+#search input:focus{ outline: none; }
+#search a{ /* search icon */
+    padding: 20px;
+    display: inline-block;
+    font-family: icon;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    text-decoration: none;
+}
+#search input {
+    position: absolute;
+    border: none;
+    font-size: 20px;
+    width: 160px;
+    top: 0px;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 23px 15px 24px 10px;
+}
+#search div {
+    text-align: center;
+    poistion: absolute;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 185px;
+    padding-top: 20px;
+    transition-duration: 0.5s;
+    text-decoration: none;
+}
+
+/* -------------- CONTAINER --------------- */
+
+/* ----------- COLOR SCHEME ------------- */
+#container { background-color: rgb(250,250,250); }
+.image-hover span { border-color: white; }
+.image-hover span { color: white;}
+.image-container { background-color: white; }
+.image-container { border-color: rgb(88,88,88); }
+.author-name a { color: rgb(88,88,88); }
+.project-name a, .author-name:hover a { color: rgb(241,96,29); }
+/* ----------- COLOR SCHEME ------------- */
+
+#container {
+    margin-top: 70px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.project-list {
+    display: inline-block;
+    list-style-type: none;
+    text-align: left;
+    padding:0 1.5vw 0 1.5vw;
+}
+.project-list > * {
+    margin-bottom: 2vh;
+    display: inline-block;
+    margin-left: 1.8vw;
+    vertical-align: top;
+    width: 30vw;
+    height: calc(40vw + 50px); /* Alternative: use javascript ? */
+}
+.project-list li:nth-child(3n + 1) {
+    margin-left: 0px;
+}
+.image-container {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding: 0.4vw;
+    border: 1px solid;
+    width: 100%;
+    height: 40vw;
+    box-sizing: border-box;
+}
+.image-container img{
+    width: 100%;
+    height: 100%;
+ }
+.image-description {
+    display: block;
+    whidth: 100%;
+    height: 50px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.project-name a{
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.project-name:hover a{ text-decoration: underline; }
+.author-name a{
+    font-size: 15px;
+    text-decoration: none;
+}
+.author-name:hover a{ text-decoration: underline; }
+.image-hover {
+    position: absolute;
+    background-color: rgba(88,88,88,0.2);
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    cursor: pointer;
+}
+.image-container:hover .image-hover {
+    z-index: 200;
+    opacity: 1;
+}
+.image-hover span {
+    font-family: icon;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -10% 0 0 -10%;
+    transition: 0.5s;
+    opacity: 0.7;
+    font-size: 2vw;
+    border-radius: 50%;
+    padding: 3%;
+    border: 0.2em solid;
+}
+.image-hover span:hover { opacity: 1; }
+
+/* -------------- READER --------------- */
+#overlay {
+    background:rgba(0,0,0,0.7);
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display: none;
+    text-align: center;
+    z-index: 800;
+    overflow-y: scroll;
+    vertical-align: middle;
+}
+#overlay img {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+/*---------- FOOTER ------------*/
+#footer {
+    height: calc(100vh - 70px);
+    width: 100%;
+    background-color: rgb(88, 88, 88);
+    display: inline-block;
+}
+#footer > img {
+    margin: 20px;
+    height: 90%;
+    display: inline-block;
+}
+#footer > div {
+    margin-top: 50px;
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* ---------- Screen size adjustments --------- */
+/* --- Remember to invert max to min ---*/
+@media only screen and (max-width: 1200px) {
+    #top-menu > a { display: none; }
+    #small-menu{
+        padding: 20px;
+        height: 70px;
+        box-sizing: border-box;
+        display: inline-block;
+        font-family: icon;
+        text-decoration: none;
+        font-color: white;
+        background-color: rgb(88, 88, 88);
+        position: relative;
+        vertical-align:top;
+        margin-left: -6px;
+        border-left: 1px solid black;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #footer > div { display: none; }
+    #footer > img { width: 90%; height: auto;}
+    #footer { text-align: center; }
+}
+
+@media only screen and (max-width: 680px) {
+    #top-menu > a { display: none; }
+    #search { display: none; }
+    .project-list > * { width: 45vw; height: calc(60vw + 50px); }
+    .image-container { height: 60vw; }
+    .project-list li:nth-child(3n + 1) { margin-left: 1.8vw; }
+    .project-list li:nth-child(2n + 1) { margin-left: 0px; }
+}
